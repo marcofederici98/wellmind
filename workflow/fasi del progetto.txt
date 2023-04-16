@@ -1,0 +1,86 @@
+Fasi in comune:
+-realizzazione di una repo su github - permettere a tutti di avere i file aggiornati in tempo reale
+-brain storming realizzazione struttura cartella di progetto
+-realizzazione documentazione
+-integrazione api gpt per migliorare il feedback del web service (optional)
+_____________
+
+Wellmind
+Additional resources:
+https://www.kaggle.com/datasets/narendrageek/mental-health-faq-for-chatbot
+
+-Realizzare un modello di machine learning per predire la necessità di trattamento
+	ETL;
+	Cleaning e Preprocessing
+	Exploratory Data Analysis;
+	Training;
+	Test;
+	Fine Tuning;
+
+-Realizzare un web service per sottoporre l'utente ad un questionario (le risposte verrano utilizzate per formulare una predizione grazie al modello)
+	L'utente dovrà inserire un codice (che collega le sue risposte al questionario aziendale
+	Se l'azienda proprietaria del codice è presente nel database, sottopongo l'utente al questionario
+	Le domande del questionario saranno quelle presenti sul dataset di riferimento del progetto
+	Il web service che mostra le domande dovrà essere generico, in modo che modificando il set di domande venga modificato automaticamente anche il webservice
+	Le risposte al questionario verranno inserite in una tupla, di modo da facilitarne l'inserimento in database
+
+-Creare la struttura del db
+	-Realizzare le tabelle del db e le loro relazioni graficamente;
+	-Implementazione del db con dati di esempio pseudo generati
+	-I dati, in forma anonima, collegati ad un id aziendale, vengono caricati sul db
+
+-Creare la parte del web service che si occupa di visualizzare i risultati per una data azienda, evidenziando criticità, punti di forza
+	-Fare delle query al db (esempio, voglio accedere ai risultati del sondaggio per l'azienda xyz (cod 123) -> inserire 123, accedere ai risultati di 123.
+	-Capire cosa vogliamo visualizzare (partecipanti al sondaggio - dimensioni azienda, feature importance, punti critici, andamenti generali)
+	-Realizzare delle visualizzazioni utilizzando seaborn, matplotlib, plotly (altro ben accetto), relative ai risultati dell'azienda xyz
+
+-Realizzazione documentazione
+	Una parte del team seguirà da vicino tutti i progetti, e si occuperà, assieme ai team di riferimento, di redigere la documentazione e coordinare i vari gruppi, di modo che gli output siano coerenti e compatibili tra loro
+
+Optional:
+-Integrazione api gpt
+
+
+
+
+________
+Talentscaler:
+
+-Analisi delle keyword:
+	ETL;
+	Cleaning e Preprocessing
+	Exploratory Data Analysis;
+	Vogliamo selezionare delle keyword per verificare quanto siano presenti queste nelle descrizioni di vari annunci di lavoro. La % di presenza determinerà l'importanza della stessa in ambito lavorativo.
+
+- Brain storming questionario di valutazione sulle competenze delle keyword
+
+-Realizzare un web service per sottoporre l'utente ad un questionario
+	L'utente selezionerà una o più figure per le quali è interessato ad applicare
+	L'utente sarà valutato sulle varie competenze (kws), ponderando l'importanza delle stesse sulla base dell'importanza delle kws
+	Le domande del questionario saranno personalizzate sulla base del ruolo scelto
+	Le risposte al questionario verranno inserite in una tupla, di modo da facilitarne l'inserimento in database
+
+-Creare la struttura del db
+	-Realizzare le tabelle del db e le loro relazioni graficamente;
+	-Implementazione del db con dati di esempio pseudo generati
+	-I dati, vengono collegati all'utente, vengono caricati sul db
+
+-Creare la parte del web service che si occupa di visualizzare i dati relativi all'utente, evidenziando criticità, punti di forza
+	Fare query al db per accedere ai dati dell'utente
+	Capire cosa vogliamo visualizzare (brainstorming)
+	Realizzare delle visualizzazioni utilizzando seaborn, matplotlib, plotly (altro ben accetto), relative ai risultati dell'utente
+
+-Realizzazione documentazione
+	Una parte del team seguirà da vicino tutti i progetti, e si occuperà, assieme ai team di riferimento, di redigere la documentazione e coordinare i vari gruppi, di modo che gli output siano coerenti e compatibili tra loro
+
+Optional:
+-Integrazione api gpt
+
+
+
+
+	
+
+
+
+

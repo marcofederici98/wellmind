@@ -1,0 +1,6 @@
+https://www.kaggle.com/datasets/osmi/mental-health-in-tech-2016
+https://www.kaggle.com/datasets/osmi/mental-health-in-tech-survey
+
+*** additional resources ***
+https://www.kaggle.com/datasets/narendrageek/mental-health-faq-for-chatbot
+

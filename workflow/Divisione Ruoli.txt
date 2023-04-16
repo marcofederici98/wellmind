@@ -1,0 +1,38 @@
+Team Wellmind:
+Marco, Giovanna, Giuseppe, Kristian, Claudia
+
+Team Talentscope:
+Gianluca, Davide, Matteo, Jessica, Alessandro
+
+I team saranno così costituiti:
+per ogni task verrà incaricato un responsabile; il team del task è composto anche da: responsabile del task del progetto opposto, membro dello stesso progetto che responsabile di un lavoro propedeutico
+
+Fasi Wellmind:
+-Machine Learning			[Claudia, Jessica**, Marco]
+	Sk-Learn; Pandas;
+-Web Service Questionario*	[Kristian, Matteo**, Giuseppe]
+	Flask; Pandas;
+-Database				[Giovanna, Davide**, Kristian]
+	MySql;
+-Web Service Visualizzazioni*	[Giuseppe, Alessandro**, Claudia]
+	Flask; Matplotlib; Seaborn;
+-Documentazione*			[Marco, Gianluca**]
+	ChatGpt; PowerPoint;
+
+Fasi TalentScope:
+-Keyword Analisi			[Jessica, Claudia**, Gianluca]
+	Sk-Learn; Pandas;
+-Web Service Questionario*	[Matteo, Kristian**, Alessandro]
+	Flask; Pandas;
+-Database				[Davide, Giovanna**, Matteo]
+	MySql;
+-Web Service Visualizzazioni*	[Alessandro, Giuseppe**, Jessica]
+	Flask; Matplotlib; Seaborn;
+-Documentazione*			[Gianluca, Marco**]
+	ChatGpt; PowerPoint;
+
+
+*propedeutico
+** da gruppo opposto
+
+
