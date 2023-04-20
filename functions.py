@@ -1,6 +1,7 @@
-def quest_gen(n=4):
+def quest_gen(n=5):
     code = ""
     code += '<form action="/echo" method="POST" class="quest">'
+    code += f'<input type="number" id="quantity" name="age2" min="18" max="99">'
     for i in range(1, n):
         code += f'<h3>{i}. Lorem Ipsum Dolor Sit Amet?</h3>'
         for j in range(4):

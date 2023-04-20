@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questionario</title>
+    <link rel="stylesheet" type="text/css" href="./static/style/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+    <div class="container">
+	<div class="w3-container">
+
+<div class="w3-light-grey">
+  {{progresso | safe}}
+</div><br>
+
+<form action="/echo" method="POST" class="quest">
+      {{numero | safe}}
+      {{domanda | safe}}
+      {{risposte | safe}}
+      <div class="navigation_btn"><a href="/echo_prev">&lt;</a>
+      <span class="divider_btn">|</span>
+      {{pulsante | safe}}</div>
+      
+
+    </div>
+  </body>
+</html>
