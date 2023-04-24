@@ -56,6 +56,16 @@ text-decoration: none !important;
     margin-bottom: 10px;
     margin-right: 10px;
     margin-left: 10px;
+    margin-top: 10px;
+    border: 0px;
+    width: 18px;
+    height: 18px;
+  }
+
+  form input[type="text"] {
+    height: max-content;
+    width: 35%;
+    margin-bottom: 10px;
   }
   
   form input[type="range"] {
@@ -74,14 +84,20 @@ text-decoration: none !important;
     cursor: pointer;
     }
     .navigation_btn {
-      background-color: #007bff;
+      background: linear-gradient(to right, #46a0ff 0%, #007bff 100%); 
       border-radius: 35px;
       display: inline-flex;
       width: min-content;
 
     }
     .divider_btn {
-      color: #fff;
-      vertical-align: bottom;
+      color: #0061c9;
       margin-top: 10%;
+      cursor: pointer;
     }
+
+    .progress-bar {
+      height: 30px;
+      border-radius: 1px;
+      background-image: linear-gradient(to right, #46a0ff, #007bff);
+  }

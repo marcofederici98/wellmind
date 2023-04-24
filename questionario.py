@@ -6,7 +6,7 @@ diz_col = {'mh_coverage_flag': "Il tuo datore di lavoro offre benefits legati al
  'mh_anonimity_flag': "Il tuo anonimato è protetto se scegli di usufruire delle risorse per la salute mentale o del trattamento per l'abuso di sostanze, fornite dal tuo datore di lavoro?",
  'mh_medical_leave': 'Se un problema di salute mentale ti ha spinto a richiedere un congedo medico dal lavoro, chiedere tale congedo sarebbe:',
  'mh_discussion_neg_impact': 'Pensi che parlare di un disturbo mentale con il tuo datore di lavoro possa avere conseguenze negative?',
- 'mh_discussion_cowork': 'Quanto pensi sarebbe facile parlare di un disturbo della salute mentale con i tuoi colleghi?',
+ 'mh_discussion_cowork': 'Parlresti di un disturbo della salute mentale con i tuoi colleghi?',
  'mh_discussion_supervis': 'Ti sentiresti a tuo agio a parlare di un disturbo della salute mentale con il tuo supervisore?',
  'mh_conseq_coworkers': 'Hai mai sentito parlare o osservato conseguenze negative per i colleghi che hanno parlato apertamente di problemi di salute mentale sul posto di lavoro?',
  'mh_eq_ph_employer': 'Ritieni che il tuo datore di lavoro prenda la salute mentale con la stessa serietà della salute fisica?',
@@ -63,6 +63,9 @@ def quest_gen():
 
 def progresso_gen(prog=0):
     code = f'<div class="w3-blue" style="height:24px;width: {prog}%"></div>'
+
+    code = f'<div class="progress-bar" style="width: {prog}%;"> </div>'
+
     return code
 def domanda_gen(domanda):
     code = f'<h2>{diz_col[domanda]}</h2>'
@@ -70,7 +73,7 @@ def domanda_gen(domanda):
 def risposta_gen(domanda, n=0):
     risposte = df[domanda].unique()
     code = ""
-    if n == 5 or n == 7:
+    if n == 5:
         code += "<p>Molto difficile - Difficile - Neutrale - Facile - Molto facile</p><br>"
         code += '<span>Molto difficile</span>'
         code += f'<input type="range" name="{domanda}" min="0" max="4" value="0" step="1" onchange="updateTextInput(this.value);">'
@@ -90,6 +93,9 @@ def risposta_gen(domanda, n=0):
 
 def pulsante_gen(n):
     code = '<input type="submit" value="&gt" ></form>'
+    code = """<div class="navigation_btn"><a href="/echo_prev">&lt;</a>
+      <span class="divider_btn">|</span>
+      <input type="submit" value="&gt" ></form>"""
     return code
 
 
