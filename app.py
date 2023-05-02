@@ -1,6 +1,24 @@
 from flask import Flask, render_template, request
 import functions
 import questionario as q
+import dashboard as dsh
+
+
+navbar = """  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span>    <img src="./static/assets/logo_black.png" alt="wellmind" width="150">
+        </span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/dashboard" class="nav-link">Dashboard</a></li>
+      </ul>
+    </header>
+  </div>"""
+
 
 global domande
 domande = ['mh_coverage_flag',
@@ -28,7 +46,8 @@ domande = ['mh_coverage_flag',
  'sex',
  'remote_flag',
  'age']
-
+global dash_n
+dash_n = -1
 global answers
 answers = []
 
@@ -44,7 +63,9 @@ def index():
     answers = []
     global num
     num = -2
-    return render_template('index.html')
+    global dash_n
+    dash_n = -1
+    return render_template('index.html', navbar = navbar)
 
 @app.route("/echo", methods =['POST', 'GET'])
 def echo():
@@ -95,6 +116,8 @@ def echo():
                                 risposte=q.risposta_gen(domanda, num), pulsante=q.pulsante_gen(num))
     else:
         return f'{answers}'
+
+
 @app.route("/echo_prev", methods =['POST', 'GET'])
 def echo_prev():
     global num
@@ -139,7 +162,33 @@ def echo_prev():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    return render_template('dashboard.html', quest = questionario.quest_gen())
+    global domande
+    global dash_n
+    try:
+        dash_n += 1
+        dmd, code = dsh.grafici(domande[dash_n])
+        return render_template('dashboard.html', dmd = dmd, code = code, navbar = navbar)
+    except:
+        dash_n = len(domande) - 1
+        dmd, code = dsh.grafici(domande[dash_n])
+        return render_template('dashboard.html', dmd = dmd, code = code, navbar = navbar)
+
+@app.route('/dashboard_prev', methods=['GET', 'POST'])
+def dashboard_prev():
+    global domande
+    global dash_n
+    try:
+        dash_n -= 1
+    except:
+        dash_n = 0
+    if dash_n < 0:
+        dash_n = 0
+    dmd, code = dsh.grafici(domande[dash_n])
+    return render_template('dashboard.html', dmd = dmd, code = code, navbar = navbar)
+
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    return render_template('contributors.html', navbar = navbar)
 
 
 if __name__ == '__main__':

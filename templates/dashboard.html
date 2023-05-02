@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="static/js/color-modes.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/style/style.css">
+    <link href="static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/heroes/">
+
+    <style>
+      .w3-border{
+        border: 0px !important;
+      }
+      .dash-container{
+        padding: 3%;
+
+      }
+      .navigation_btn {
+      background: linear-gradient(to right, #46a0ff 0%, #007bff 100%); 
+      border-radius: 35px;
+      display:flex;
+      width: min-content;
+  
+
+    }
+
+   .nvg_a {
+font-weight: 900 !important;
+font-size: 16px !important;
+padding: 1rem 2rem !important;
+border-radius: 5px !important;
+background-color: #ffffff00 !important;
+color: #ffffff !important;
+border: none;
+cursor: pointer;
+text-decoration: none !important;
+}
+    .divider_btn {
+      color: #0061c9;
+      margin-top: 10%;
+      cursor: pointer;
+    }
+
+
+    .centering {
+      display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2%;
+  left: 46%
+}
+.progress-bar {
+      height: 30px;
+      border-radius: 1px;
+      background-image: linear-gradient(to right, #46a0ff, #007bff);
+      color: #fff;
+      text-align: center;
+  }
+
+  .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      body {
+        background: rgb(200,224,225);
+        background: radial-gradient(circle, rgba(200,224,225,1) 0%, rgba(232,225,208,1) 100%);
+      }
+    </style>
+</head>
+<body>
+  {{navbar | safe}}
+  <div class="dash-container">
+<h1>{{dmd | safe}}</h1>
+<div class="w3-container">
+{{code | safe}}
+<div class="centering"><div class="navigation_btn"><a class="nvg_a" href="/dashboard_prev">&lt;</a> <span class="divider_btn">|</span> <a class="nvg_a" href="/dashboard">&gt;</a></div></div>
+
+</div>
+  </div>
+
+
+
+
+
+</body>
