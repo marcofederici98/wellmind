@@ -25,7 +25,7 @@ diz_col = {'mh_coverage_flag': "Il tuo datore di lavoro offre benefits legati al
  'remote_flag': 'Lavori da remoto?',
  'age': "Qual è la tua fascia d'età?"}
 
-df = pd.read_csv(r".\data\output\df_tradotto.csv")
+df = pd.read_csv(r"./data/output/df_tradotto.csv")
 df = df.drop('Unnamed: 0', axis = 1)
 
 codice_azienda = "Inserisci il codice aziendale:"
