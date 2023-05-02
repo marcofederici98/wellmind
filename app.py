@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 import functions
 import questionario as q
 import dashboard as dsh
+import database as db
+import mysql.connector
+
 
 
 navbar = """  <div class="container">
@@ -78,9 +81,15 @@ def echo():
       <input type="submit" value="&gt" ></form>""")
     global domande
     num += 1
+    if num == 0:
+        global answers
+        answers = []
+        try:
+            answers.append(request.form['codaz'])
+        except:
+            return "non preso"
 
     if num > 0 and num <= len(domande):
-        global answers
         try:
             answers.append(request.form[domande[num-1]])
         except:
@@ -115,7 +124,16 @@ def echo():
         return render_template('questionario.html', numero = num + 1, progresso=q.progresso_gen(num/25*100), domanda=q.domanda_gen(domanda),
                                 risposte=q.risposta_gen(domanda, num), pulsante=q.pulsante_gen(num))
     else:
-        return f'{answers}'
+        
+        mydb = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root')
+        mycursor = mydb.cursor()
+        answers = tuple(answers)
+        lanswers = [answers]
+        db.carica_dati(lanswers)
+        return render_template('successo.html')
+        
 
 
 @app.route("/echo_prev", methods =['POST', 'GET'])

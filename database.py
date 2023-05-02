@@ -41,3 +41,9 @@ myresult = mycursor.fetchall()
 data_result = pd.DataFrame(myresult)
 print(data_result)
 print(type(data_result))
+
+def carica_dati(dato):
+    sql = "INSERT INTO QUESTIONARIO (codice_azienda, mh_coverage_flag,mh_coverage_awareness_flag,mh_employer_discussion,mh_resources_provided,mh_anonimity_flag,mh_medical_leave,mh_discussion_neg_impact,mh_discussion_cowork,mh_discussion_supervis,mh_conseq_coworkers,mh_eq_ph_employer,prev_mh_benefits,future_mh_specification,mh_hurt_on_career,mh_neg_view_cowork,mh_sharing_friends_fam_flag,mh_bad_response_workplace,mh_family_hist,mh_disorder_past,mh_disorder_current,mh_diagnos_proffesional,mh_sought_proffes_treatm,sex,remote_flag,age) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);"
+    mycursor.executemany(sql, dato)
+    mydb.commit()
+    return None
