@@ -21,8 +21,48 @@ navbar = """  <div class="container">
       </ul>
     </header>
   </div>"""
+footer = """  <div class="b-example-divider"></div>
 
-
+  <div class="container">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="col mb-2">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        </a>
+        <p class="text-body-secondary">&copy; 2023 Wellmind</p>
+      </div>
+  
+      <div class="col mb-2">
+  
+      </div>
+  
+      <div class="col mb-2">
+        <h5>Menu</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="/dashboard" class="nav-link p-0 text-body-secondary">Dashboard</a></li>
+          <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-body-secondary">About</a></li>
+          <li class="nav-item mb-2"><a href="/echo" class="nav-link p-0 text-body-secondary">Questionario</a></li>
+          <li class="nav-item mb-2"><a href="/codice" class="nav-link p-0 text-body-secondary">Richiedi codice</a></li>
+          <li class="nav-item mb-2"><a href="https://github.com/marcofederici98/wellmind" class="nav-link p-0 text-body-secondary">Codice sorgente</a></li>
+        </ul>
+      </div>
+  
+      <div class="col mb-2">
+        <h5>Mentions</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://osmihelp.org/" class="nav-link p-0 text-body-secondary">Open Sourcing Mental Illness</a></li>
+          <li class="nav-item mb-2"><a href="https://italy.generation.org/" class="nav-link p-0 text-body-secondary">Generation Italy</a></li>
+          <li class="nav-item mb-2"><a href="https://chat.openai.com/" class="nav-link p-0 text-body-secondary">Chat GPT</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  
+  
+  
+  
+      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>"""
 global domande
 domande = ['mh_coverage_flag',
  'mh_coverage_awareness_flag',
@@ -68,7 +108,12 @@ def index():
     num = -2
     global dash_n
     dash_n = -1
-    return render_template('index.html', navbar = navbar)
+    return render_template('index.html', navbar = navbar, footer = footer)
+
+@app.route('/codice', methods=['GET', 'POST'])
+def codice():
+    codice_az = db.codice_pipeline()
+    return render_template('codice.html', codice_az = codice_az, footer = footer, navbar = navbar)
 
 @app.route("/echo", methods =['POST', 'GET'])
 def echo():
@@ -206,7 +251,7 @@ def dashboard_prev():
 
 @app.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template('contributors.html', navbar = navbar)
+    return render_template('contributors.html', navbar = navbar, footer = footer)
 
 
 if __name__ == '__main__':
