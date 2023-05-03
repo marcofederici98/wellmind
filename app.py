@@ -253,6 +253,11 @@ def dashboard_prev():
 def about():
     return render_template('contributors.html', navbar = navbar, footer = footer)
 
+@app.errorhandler(404)
+def error404(e):
+    return render_template('404.html', navbar = navbar, footer = footer), 404
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
