@@ -27,6 +27,17 @@ diz_col = {'mh_coverage_flag': "Il tuo datore di lavoro offre benefits legati al
 
 df = pd.read_csv(r"./data/output/df_tradotto.csv")
 df = df.drop('Unnamed: 0', axis = 1)
+"""mh_medical_leave mh_sharing_friends/fam_flag"""
+diz_domanda1 = {'Somewhat open' : "Abbastanza aperto", "Very open" : "Molto aperto", "Neutral": "Neutrale",
+                "Not open at all" : "Per niente aperto", "Somewhat not open" : "Poco aperto"
+}
+diz_domanda2 = {
+    "Very easy": "Molto facile", "Somewhat easy": "Abbastanza facile", "Very difficult": "Molto difficile",
+    "Somewhat difficult": "Abbastanza difficile", "Neither easy nor difficult" : "Neutrale"  
+}
+
+df['mh_medical_leave'] = df['mh_medical_leave'].replace(diz_domanda2)
+df['mh_sharing_friends/fam_flag'] = df['mh_sharing_friends/fam_flag'].replace(diz_domanda1)
 
 codice_azienda = "Inserisci il codice aziendale:"
 

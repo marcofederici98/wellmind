@@ -43,10 +43,8 @@ text-decoration: none !important;
 
     .centering {
       display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 2%;
-  left: 46%
+      justify-content: center;
+      left: 46%
 }
 .progress-bar {
       height: 30px;
@@ -112,24 +110,74 @@ text-decoration: none !important;
         z-index: 1500;
       }
       body {
-        background: rgb(200,224,225);
-        background: radial-gradient(circle, rgba(200,224,225,1) 0%, rgba(232,225,208,1) 100%);
+        background: #fff !important;
       }
+      img.infografica{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        left: 45%;
+      }
+
     </style>
 </head>
 <body>
+
   {{navbar | safe}}
+  <div class="centering"><div class="navigation_btn"><a class="nvg_a" href="/dashboard_prev">&lt;</a> <span class="divider_btn">|</span> <a class="nvg_a" href="/dashboard">&gt;</a></div></div>
+
   <div class="dash-container">
 <h1>{{dmd | safe}}</h1>
 <div class="w3-container">
 {{code | safe}}
-<div class="centering"><div class="navigation_btn"><a class="nvg_a" href="/dashboard_prev">&lt;</a> <span class="divider_btn">|</span> <a class="nvg_a" href="/dashboard">&gt;</a></div></div>
-
 </div>
-  </div>
+<br><br>
+<h1>Perché è importante?</h1>
+
+
+<div class="infografica"><h2>Il 20%</h2>
+  <h4>Delle persone in età lavorativa sperimenta problemi di salute mentale </h4>
+   <img class="infografica" src="./static/assets/infografica9.jpg"></div>
+  
+   <div class="infografica"><h2>Il 51%</h2>
+    <h4>Dei lavoratori e delle lavoratrici dichiara che gli impegni di lavoro
+      interferiscono con la vita privata e/o familiare </h4>
+     <img class="infografica" src="./static/assets/infografica2.jpg"></div>
+  
+     <div class="infografica"><h2>Il 40%</h2>
+      <h4>Dei lavoratori e delle lavoratrici riferisce di non sentirsi libero di parlare del proprio malessere emotivo a lavoro </h4>
+       <img class="infografica" src="./static/assets/infografica3.jpg"></div>
+      
+       <div class="infografica"><h2>Il 33%</h2>
+        <h4>1 lavoratore su 3 dichiara di essersi assentato dal lavoro a causa di malessere emotivo, dovuto a eccessivi carichi di stress e ansia, che non riusciva più a sostenere.</h4>
+         <img class="infografica" src="./static/assets/infografica4.jpg"></div>
+    
+         <div class="infografica"><h2>Il 49%</h2>
+          <h4>Degli under 34 si è dimesso almeno una volta per preservare la propria salute psicologica </h4>
+           <img class="infografica" src="./static/assets/infografica5.jpg"></div>
+        
+           <div class="infografica"><h2>Il 92%</h2>
+            <h4>Delle lavoratrici e dei lavoratori ritiene importante che l’azienda si occupi attivamente del “BENESSERE PSICOLOGICO” dei propri dipendenti. </h4>
+             <img class="infografica" src="./static/assets/infografica7.jpg"></div>
+  
+             <div class="infografica"><h2>Il 73%</h2>
+              <h4>Delle lavoratrici e dei lavoratori ritiene importante che l’azienda si occupi attivamente del “BENESSERE PSICOLOGICO” dei propri dipendenti. </h4>
+               <img class="infografica" src="./static/assets/infografica8.jpg"></div>
+  
+               <div class="infografica"><h2>Il 42%</h2>
+                <h4>Delle lavoratrici e dei lavoratori ritiene inefficaci le iniziative promosse dalla sua azienda per aumentare il livello di benessere dei lavoratori e delle lavoratrici e/o ridurre lo stress legato al lavoro </h4>
+                 <img class="infografica" src="./static/assets/infografica6.jpg"></div>
+  
+                 <h3>Fonti</h3>
+                 
+                  <a href="https://cdn.mindwork.it/BVA-Doxa_Mindwork_MainResults2021.pdf">BVA Doxa Mindwork - Sondaggio alle aziende italiane 2021 </a><br>
+                 <a href="https://www.quotidianosanita.it/studi-e-analisi/articolo.php?articolo_id=99981">quotidianosanita </a><br>
+                 <a href="https://aziende.hosco.com/blog/come-aiutare-i-dipendenti-a-prendersi-cura-della-salute-mentale">Report McKinsey 2020</a>
+  
 
 
 
 
 
+{{footer | safe}}
 </body>
